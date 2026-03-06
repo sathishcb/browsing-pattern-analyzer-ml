@@ -1,174 +1,264 @@
-# DS105 Final Project
-## Time-Based Browsing Pattern Analyzer using Deep Learning with RAM Usage Correlation
+# ⏱️ Time-Based Browsing Pattern Analyzer
+
+### Deep Learning + RAM Usage Correlation for User Behavior Analytics
 
 ---
 
 ## 📌 Overview
 
-This project analyzes your personal browsing history to uncover:
-- Time-based browsing patterns (hour/day/session level)
-- Dominant website categories
-- Session behavior clusters
-- Deep learning predictions / anomaly detection
-- RAM usage correlation with browsing behavior
+The **Time-Based Browsing Pattern Analyzer** is an AI-powered system that analyzes browser history and system RAM usage to understand **user browsing behavior over time**.
+
+The system detects:
+
+* ⏰ Time-based browsing patterns (hour/day/session)
+* 🌐 Dominant website categories
+* 📊 Browsing session clusters using ML
+* 🤖 Deep learning predictions & anomaly detection
+* 💾 Correlation between browsing behavior and RAM usage
+* 💡 Actionable recommendations to improve productivity
+
+This project demonstrates **behavior analytics, machine learning, deep learning, and system monitoring** in a real-world application.
+
+---
+
+## 🎯 Project Objectives
+
+The goal of this project is to build an **AI system that analyzes browsing activity for the last 3–5 days and identifies:**
+
+1. Browsing patterns based on time
+2. Dominant website categories
+3. User behavior clusters
+4. Unusual browsing sessions (anomaly detection)
+5. RAM usage correlation with browsing activity
 
 ---
 
 ## 🗂️ Project Structure
 
 ```
-DS105_Project/
-├── config.yaml                  # All configuration settings
+Time-Based-Browsing-Pattern-Analyzer/
+│
+├── config.yaml                  # Configuration settings
 ├── requirements.txt             # Python dependencies
-├── README.md                    # This file
-├── main.py                      # Run full pipeline
+├── README.md                    # Project documentation
+├── main.py                      # Run the full pipeline
+│
 ├── src/
 │   ├── collect/
-│   │   ├── extract_history.py   # Browser SQLite extraction
-│   │   ├── ram_logger.py        # RAM monitoring
-│   │   └── generate_sample.py   # Sample data generator (for testing)
+│   │   ├── extract_history.py   # Extract browser history from SQLite
+│   │   ├── ram_logger.py        # System RAM monitoring
+│   │   └── generate_sample.py   # Generate sample dataset
+│   │
 │   ├── prep/
-│   │   ├── preprocess.py        # URL cleaning, category mapping
-│   │   └── sessionize.py        # Session building
+│   │   ├── preprocess.py        # URL cleaning + feature creation
+│   │   └── sessionize.py        # Session generation
+│   │
 │   ├── models/
-│   │   ├── clustering.py        # KMeans/GMM/DBSCAN
+│   │   ├── clustering.py        # KMeans / GMM / DBSCAN
 │   │   ├── lstm_model.py        # LSTM next-category prediction
-│   │   └── autoencoder.py       # Autoencoder anomaly detection
+│   │   └── autoencoder.py       # Anomaly detection model
+│   │
 │   └── analytics/
-│       ├── ram_correlation.py   # RAM + browsing merge & analysis
-│       ├── recommendations.py   # Actionable recommendations
-│       └── visualizations.py    # All plots
-├── data/                        # CSV datasets (gitignored for privacy)
+│       ├── ram_correlation.py   # RAM usage correlation analysis
+│       ├── recommendations.py   # Productivity recommendations
+│       └── visualizations.py    # Charts and graphs
+│
+├── data/                        # Processed datasets (gitignored)
+│
 ├── notebooks/
-│   └── DS105_Analysis.ipynb     # Jupyter notebook walkthrough
+│   └── DS105_Analysis.ipynb     # Jupyter analysis notebook
+│
 ├── reports/
 │   └── final_report.md          # Auto-generated report
+│
 └── dashboard.py                 # Streamlit dashboard
 ```
 
 ---
 
-## ⚙️ Setup Instructions
+## ⚙️ Installation & Setup
 
-### 1. Clone / Download the project
+### 1️⃣ Clone the Repository
 
 ```bash
-cd DS105_Project
+git clone https://github.com/<your-username>/browsing-pattern-analyzer-ml.git
+cd browsing-pattern-analyzer-ml
 ```
 
-### 2. Create virtual environment
+---
+
+### 2️⃣ Create Virtual Environment
 
 ```bash
 python -m venv venv
-# Windows:
+```
+
+Activate environment:
+
+**Windows**
+
+```
 venv\Scripts\activate
-# Mac/Linux:
+```
+
+**Mac / Linux**
+
+```
 source venv/bin/activate
 ```
 
-### 3. Install dependencies
+---
 
-```bash
+### 3️⃣ Install Dependencies
+
+```
 pip install -r requirements.txt
 ```
 
 ---
 
-## 🚀 How to Run
+## 🚀 How to Run the Project
 
-### Option A: Full Pipeline (Recommended)
+### Option A — Run Full Pipeline (Recommended)
 
-```bash
+```
 python main.py
 ```
 
-This runs all 7 modules in sequence automatically.
+This executes all modules automatically:
 
-### Option B: Step by Step
+1. Data collection
+2. Data preprocessing
+3. Session creation
+4. Clustering analysis
+5. Deep learning model
+6. RAM correlation analysis
+7. Recommendation generation
 
-```bash
-# Step 1: Generate sample data (if no real browser data)
+---
+
+### Option B — Run Modules Individually
+
+```
+# Generate sample data
 python src/collect/generate_sample.py
 
-# Step 2: (Optional) Extract real Chrome history
+# Extract browser history
 python src/collect/extract_history.py
 
-# Step 3: (Optional) Start RAM logger in background
+# Start RAM monitoring
 python src/collect/ram_logger.py
 
-# Step 4: Preprocess
+# Preprocess browsing data
 python src/prep/preprocess.py
 
-# Step 5: Sessionize
+# Create browsing sessions
 python src/prep/sessionize.py
 
-# Step 6: Cluster
+# Run clustering
 python src/models/clustering.py
 
-# Step 7: Deep Learning
+# Run deep learning model
 python src/models/autoencoder.py
 # OR
 python src/models/lstm_model.py
 
-# Step 8: Recommendations
+# Generate recommendations
 python src/analytics/recommendations.py
 
-# Step 9: Generate visualizations
+# Generate visualizations
 python src/analytics/visualizations.py
 ```
 
-### Option C: Streamlit Dashboard
+---
 
-```bash
+### Option C — Launch Interactive Dashboard
+
+```
 streamlit run dashboard.py
 ```
+
+The dashboard shows:
+
+* Hourly browsing activity
+* Top visited domains
+* Cluster visualization
+* RAM usage trends
+* Behavior insights
 
 ---
 
 ## 📊 Output Files
 
-| File | Description |
-|------|-------------|
-| `data/browsing_history.csv` | Cleaned browsing history (domain-level) |
-| `data/sessions.csv` | Session-level features |
-| `data/sessions_clustered.csv` | Sessions with cluster labels |
-| `data/merged_browsing_ram.csv` | Browsing + RAM merged |
-| `reports/final_report.md` | Auto-generated analysis report |
+| File                           | Description              |
+| ------------------------------ | ------------------------ |
+| `data/browsing_history.csv`    | Cleaned browsing history |
+| `data/sessions.csv`            | Session-level features   |
+| `data/sessions_clustered.csv`  | Clustered sessions       |
+| `data/merged_browsing_ram.csv` | RAM + browsing merged    |
+| `reports/final_report.md`      | Generated project report |
 
 ---
 
-## 🔒 Privacy Rules
+## 🔒 Privacy & Data Protection
 
-- Raw URLs are **never stored** — only domain names
-- Query strings and paths are stripped
-- Do NOT upload `data/` folder to GitHub
-- Add `data/` to `.gitignore`
+To protect user privacy:
 
----
-
-## 📁 Git Workflow
-
-```bash
-git init
-git add src/ config.yaml requirements.txt README.md main.py dashboard.py notebooks/
-git commit -m "feat: initial project setup"
-
-# Good commit messages:
-# feat: add sessionization
-# fix: url parsing bug
-# exp: try GRU model
-# docs: update README
-```
+* Only **domain names are stored**
+* URL paths and query parameters are removed
+* Raw browsing history is **never uploaded**
+* The `data/` folder is excluded using `.gitignore`
 
 ---
 
 ## 🧑‍💻 Tech Stack
 
-`Python` `Pandas` `NumPy` `SQLite` `psutil` `TensorFlow/Keras` `scikit-learn` `Streamlit` `Plotly` `Matplotlib`
+| Category          | Tools              |
+| ----------------- | ------------------ |
+| Programming       | Python             |
+| Data Processing   | Pandas, NumPy      |
+| Machine Learning  | Scikit-learn       |
+| Deep Learning     | TensorFlow / Keras |
+| Visualization     | Matplotlib, Plotly |
+| Dashboard         | Streamlit          |
+| System Monitoring | psutil             |
+| Database          | SQLite             |
 
 ---
 
-## 📬 Doubt Sessions
+## 📈 Key Features
 
-- **DS/AIML:** Mon–Sat, 3:30–4:30 PM (book by 12 PM same day)
-- **Live Evaluation:** Mon–Sat, 5:30–7:00 PM
+✔ Browsing history extraction
+✔ Time-based session analysis
+✔ Behavior clustering
+✔ Deep learning anomaly detection
+✔ RAM usage monitoring
+✔ Interactive Streamlit dashboard
+
+---
+
+## 📚 Learning Outcomes
+
+This project demonstrates practical experience in:
+
+* Behavior analytics
+* Feature engineering
+* Sessionization techniques
+* Unsupervised machine learning
+* Deep learning for anomaly detection
+* System resource monitoring
+* Data visualization & dashboards
+
+---
+
+## 👨‍💻 Author
+
+**Sathishkumar CB**
+
+Machine Learning & Data Science Enthusiast
+
+---
+
+## ⭐ If You Like This Project
+
+Give the repository a ⭐ on GitHub!
