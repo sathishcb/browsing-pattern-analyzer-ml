@@ -1,7 +1,7 @@
 # DS105 Final Project Report
 ## Time-Based Browsing Pattern Analyzer with RAM Correlation
 
-**Generated:** 2026-03-05 07:58
+**Generated:** 2026-03-06 08:00
 **Analysis Window:** Last 5 days
 
 ---
@@ -81,7 +81,11 @@
 
 ## 7. Deep Learning Results
 
-*Deep learning results not yet generated.*
+**Model Used:** Autoencoder (anomaly detection)
+- Anomalous sessions detected: **6**
+- Reconstruction error threshold: **2.0072** (95th percentile)
+
+![Anomaly Detection](figures/08_anomaly_detection.png)
 
 ## 8. Recommendations
 
@@ -108,6 +112,10 @@
 ### 💾 Memory-Heavy Browsing Categories
 **Evidence:** Top 3 RAM-heavy: social, learning, messaging (peaks: 1425 MB, 1375 MB, 1357 MB)
 **Action:** Close tabs from these categories when doing RAM-intensive work. Use lightweight browsers or enable hardware acceleration.
+
+### 🚨 6 Anomalous Sessions Detected
+**Evidence:** Sessions with unusual time, switching, or duration patterns
+**Action:** Review these sessions — they often represent stress-browsing or unplanned rabbit holes. Set alarms as session reminders.
 
 ---
 

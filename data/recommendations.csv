@@ -5,3 +5,4 @@ Positive Habit,📚,Strong Learning Behavior Detected,Learning sites account for
 Focus,🔄,High Tab-Switching Detected,Average category switching rate: 0.67 (>0.55 = fragmented),Try single-tab browsing for focused tasks. OneTab or Tab Suspender extensions can help reduce tab overload.
 Digital Wellbeing,⏳,Unusually Long Sessions Detected,"5 sessions > 90 min, mostly on 'learning'","Take a 5-10 min break every 45 minutes. Try the Pomodoro technique: 25 min work, 5 min break."
 IT Performance,💾,Memory-Heavy Browsing Categories,"Top 3 RAM-heavy: social, learning, messaging (peaks: 1425 MB, 1375 MB, 1357 MB)",Close tabs from these categories when doing RAM-intensive work. Use lightweight browsers or enable hardware acceleration.
+Behavior Insight,🚨,6 Anomalous Sessions Detected,"Sessions with unusual time, switching, or duration patterns",Review these sessions — they often represent stress-browsing or unplanned rabbit holes. Set alarms as session reminders.
