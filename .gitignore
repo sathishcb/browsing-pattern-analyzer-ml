@@ -1,0 +1,23 @@
+# Privacy - never commit raw browsing data
+data/browsing_history_raw.csv
+data/temp_history.db
+
+# Model files (large)
+data/*.keras
+data/*.pkl
+data/*.npy
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db

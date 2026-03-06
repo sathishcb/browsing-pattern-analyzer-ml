@@ -1,0 +1,11 @@
+category,mean_browser_ram_mb,peak_browser_ram_mb,mean_system_ram_mb,mean_cpu_percent,visit_count
+social,980.7,1424.9,7357.5,55.7,105
+learning,977.7,1375.4,7288.0,53.3,166
+messaging,1002.0,1356.7,7514.4,50.3,58
+shopping,948.9,1344.2,7102.2,57.2,41
+news,945.5,1326.0,7026.6,46.9,42
+ai_tools,939.0,1287.5,7194.6,49.5,63
+video,983.4,1284.3,7227.5,52.8,31
+professional,967.5,1280.7,7157.8,50.3,37
+search,951.9,1247.5,7131.3,50.5,53
+email,977.4,1244.8,7329.2,52.1,55

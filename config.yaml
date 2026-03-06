@@ -1,0 +1,38 @@
+# DS105 Final Project Configuration
+project:
+  name: "Time-Based Browsing Pattern Analyzer"
+  version: "1.0.0"
+
+data:
+  days_window: 5           # Options: 3, 4, or 5
+  session_gap_minutes: 15  # Inactivity gap to split sessions
+  ram_log_interval_sec: 10 # How often RAM is logged
+
+paths:
+  raw_history: "data/browsing_history_raw.csv"
+  clean_history: "data/browsing_history.csv"
+  ram_log: "data/ram_log.csv"
+  sessions: "data/sessions.csv"
+  sessions_clustered: "data/sessions_clustered.csv"
+  domain_map: "data/domain_category_map.csv"
+  merged: "data/merged_browsing_ram.csv"
+  report: "reports/final_report.md"
+
+clustering:
+  n_clusters: 4
+  random_seed: 42
+  algorithm: "kmeans"   # options: kmeans, gmm, dbscan
+
+deep_learning:
+  model_type: "autoencoder"  # options: lstm, autoencoder
+  sequence_length: 5         # for LSTM
+  epochs: 50
+  batch_size: 16
+  anomaly_percentile: 95     # top X% reconstruction error = anomaly
+
+ram_logger:
+  duration_minutes: 120
+  interval_seconds: 10
+
+browser:
+  type: "chrome"  # options: chrome, edge

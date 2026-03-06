@@ -1,0 +1,7 @@
+type,icon,title,evidence,recommendation
+Digital Wellbeing,🌙,Late-Night Social Media Loop Detected,42% of late-night sessions are social media,Set a screen-off rule after 10 PM. Use 'Do Not Disturb' or app timers.
+Productivity,⏰,Peak Distraction Hour: 18:00,Highest browsing volume at 18:00 with 78 visits,"Protect 18:00–19:00 for deep work. Turn off notifications, close non-essential tabs."
+Positive Habit,📚,Strong Learning Behavior Detected,Learning sites account for 27% of browsing,"Great job! Consider scheduling your learning sessions in the morning when focus is highest, and tracking progress with Notion or Obsidian."
+Focus,🔄,High Tab-Switching Detected,Average category switching rate: 0.67 (>0.55 = fragmented),Try single-tab browsing for focused tasks. OneTab or Tab Suspender extensions can help reduce tab overload.
+Digital Wellbeing,⏳,Unusually Long Sessions Detected,"5 sessions > 90 min, mostly on 'learning'","Take a 5-10 min break every 45 minutes. Try the Pomodoro technique: 25 min work, 5 min break."
+IT Performance,💾,Memory-Heavy Browsing Categories,"Top 3 RAM-heavy: social, learning, messaging (peaks: 1425 MB, 1375 MB, 1357 MB)",Close tabs from these categories when doing RAM-intensive work. Use lightweight browsers or enable hardware acceleration.
